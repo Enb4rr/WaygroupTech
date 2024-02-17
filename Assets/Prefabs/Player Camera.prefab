@@ -75,9 +75,9 @@ MonoBehaviour:
   m_VerticalAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 300
+    m_MaxSpeed: 180
     m_AccelTime: 0.1
-    m_DecelTime: 0.1
+    m_DecelTime: 0
     m_InputAxisName: 
     m_InputAxisValue: 0
     m_InvertInput: 1
@@ -99,9 +99,9 @@ MonoBehaviour:
   m_HorizontalAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 300
+    m_MaxSpeed: 180
     m_AccelTime: 0.1
-    m_DecelTime: 0.1
+    m_DecelTime: 0
     m_InputAxisName: 
     m_InputAxisValue: 0
     m_InvertInput: 0
@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5379561661129778826}
   - component: {fileID: 1950116900752866004}
-  - component: {fileID: 4154685903120797272}
+  - component: {fileID: 7284464198216336713}
   m_Layer: 0
   m_Name: Player Camera
   m_TagString: Untagged
@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6952190194450557234}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4, y: 1.9, z: -1.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -194,7 +194,7 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 3654496582464146695}
---- !u!114 &4154685903120797272
+--- !u!114 &7284464198216336713
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,9 +203,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6952190194450557234}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4a0000c340fd84488763cb3f2e20324, type: 3}
+  m_Script: {fileID: 11500000, guid: fb7194dc27b9df64c8beca7482ee8e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSpeed: 10
-  verticalSpeed: 10
-  clampAngle: 80
+  PlayerIndex: -1
+  AutoEnableInputs: 1
+  XYAxis: {fileID: -2983564514744810630, guid: 6dc3b2f461dfa6f4b8d1a4f5bc3dfe2c, type: 3}
+  ZAxis: {fileID: 0}
