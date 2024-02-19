@@ -7,25 +7,26 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
-    [SerializeField] private Transform playerTransform;
     [SerializeField] private LayerMask whatIsGround, whatIsPlayer;
     [SerializeField] private float health;
+    private Transform playerTransform;
     private Player player;
 
     #region States
 
     //Patroling
+    [SerializeField] private float walkPointRange;
     private Vector3 walkPoint;
     private bool walkPointSet;
-    private float walkPointRange;
+    
 
     //Attacking
-    private float timeBetweenAttacks;
-    private bool alreadyAttacked;
+    [SerializeField] private float timeBetweenAttacks;
     [SerializeField] private BoxCollider hitZone;
+    private bool alreadyAttacked;
 
     //States
-    private float sightRange, attackRange;
+    [SerializeField] private float sightRange, attackRange;
     private bool playerInSightRange, playerInAttackRange;
 
     #endregion
@@ -35,6 +36,11 @@ public class EnemyAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         player = FindObjectOfType<Player>();
         playerTransform = player.transform;
+    }
+
+    private void Start()
+    {
+        hitZone.enabled = false;
     }
 
     private void Update()

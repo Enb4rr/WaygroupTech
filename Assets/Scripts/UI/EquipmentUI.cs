@@ -19,6 +19,8 @@ public class EquipmentUI : MonoBehaviour
     [SerializeField] private List<TMP_Text> interactionsTexts;
     [SerializeField] private List<Image> inteactionImages;
 
+    [SerializeField] private TMP_Text healthBar;
+
     private void Awake()
     {
         Instance = this;
@@ -62,5 +64,10 @@ public class EquipmentUI : MonoBehaviour
         {
             item.DOFade(fullFadeAmmount, fadeDuration);
         }
+    }
+
+    public void UpdateHealthBar(string health)
+    {
+        healthBar.text = health;
     }
 }

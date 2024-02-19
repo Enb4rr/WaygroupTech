@@ -130,9 +130,11 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         healthPoints -= damage;
+        equipmentUI.UpdateHealthBar(healthPoints.ToString());
         if (healthPoints < 0)
         {
             healthPoints = 0;
+            equipmentUI.UpdateHealthBar(healthPoints.ToString());
             OnPlayerDead?.Invoke(true);
         }
     }
