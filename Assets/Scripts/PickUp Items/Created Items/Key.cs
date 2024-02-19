@@ -38,6 +38,5 @@ public class Key : PickUpItem
 
     public override void CollisionInteraction(Collision collision)
     {
-        Debug.Log(collision.gameObject.name);
     }
 }
