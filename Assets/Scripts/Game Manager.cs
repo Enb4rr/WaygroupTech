@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager Instance;
 
     public delegate void GameEvents();
 
@@ -15,11 +15,15 @@ public class GameManager : MonoBehaviour
 
     private Player player;
 
-    private void Start()
+    private void Awake()
     {
         player = FindObjectOfType<Player>();
+        Instance = this;
+    }
 
-        instance = this;
+    private void Start()
+    {
+        if (Instance != null) StartGame();
     }
 
     private void StartGame()
