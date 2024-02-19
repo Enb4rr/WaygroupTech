@@ -22,6 +22,7 @@ public class InventoryManager : MonoBehaviour
         player.OnPickUpItem += AddItem;
         player.OnDropItem += RemoveItem;
         player.OnThrowItem += RemoveItem;
+        player.OnEquipItem += ReturnItemInSlot;
         gameManager.OnStart += ResetSlots;
     }
 
@@ -108,4 +109,9 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    private PickUpItem ReturnItemInSlot(int index)
+    {
+        if (slots[index].Item == null) return null;
+        else return slots[index].Item;
+    }
 }
